@@ -1,0 +1,62 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:pro_resume/Page/home_page.dart';
+import 'package:pro_resume/Resources/StringConstants.dart';
+
+import 'Themes/themes.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+
+  static _MyAppState? of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDarkMode = true;
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: _initialization,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          print('Has Error');
+        }
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp(
+            title: myName,
+            debugShowCheckedModeBanner: false,
+            home: const HomePage(),
+            theme: isDarkMode ? darkTheme(context) : lightTheme(context),
+          );
+        }
+        return const CircularProgressIndicator();
+      },
+    );
+  }
+
+  void changeTheme() {
+    setState(() {
+      isDarkMode = !(isDarkMode);
+    });
+  }
+
+  bool isCurrentDarkMode() {
+    return isDarkMode;
+  }
+}

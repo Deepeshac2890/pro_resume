@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "675636258792",
+    "project_id": "proresume-ee37a",
+    "storage_bucket": "proresume-ee37a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675636258792:android:f88956be7cfcc96ea4e65d",
+        "android_client_info": {
+          "package_name": "com.deepeshac280.pro_resume"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675636258792-8qpst39jljdglben35doj787vhn83qf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKCaJVrYa0Sm4eD0AY4DOIMtGsnz-Q4uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675636258792-8qpst39jljdglben35doj787vhn83qf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
