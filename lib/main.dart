@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:pro_resume/Page/home_page.dart';
+import 'package:pro_resume/Page/HomePage.dart';
 
 import 'Constants/StringConstants.dart';
 import 'Themes/themes.dart';
@@ -42,9 +42,14 @@ class _MyAppState extends State<MyApp> {
         }
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
+            // routes: {
+            //   sideNavigationBar.id: (context) => const sideNavigationBar(),
+            //   HomePage.id: (context) => const HomePage(),
+            // },
+            // initialRoute: sideNavigationBar.id,
             title: myName,
+            home: CompleteHomePage(),
             debugShowCheckedModeBanner: false,
-            home: const HomePage(),
             theme: isDarkMode ? darkTheme(context) : lightTheme(context),
           );
         }

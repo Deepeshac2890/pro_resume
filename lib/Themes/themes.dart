@@ -15,7 +15,9 @@ darkTheme(context) {
         buttonColor: Colors.blue,
         splashColor: Colors.black),
     appBarTheme: const AppBarTheme(
-        elevation: 0.0, titleTextStyle: TextStyle(color: Colors.white)),
+        color: Colors.white,
+        elevation: 0.0,
+        titleTextStyle: TextStyle(color: Colors.black)),
   );
 }
 
@@ -34,6 +36,8 @@ lightTheme(context) {
         buttonColor: Colors.blue,
         splashColor: Colors.white),
     appBarTheme: const AppBarTheme(
-        elevation: 0.0, titleTextStyle: TextStyle(color: Colors.black)),
+        color: Colors.black,
+        elevation: 0.0,
+        titleTextStyle: TextStyle(color: Colors.white)),
   );
 }

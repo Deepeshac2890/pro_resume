@@ -11,8 +11,9 @@ import '../Model/projectModel.dart';
 class ProjectWidget extends StatelessWidget {
   final Project _project;
   final double _bottomPadding;
+  final bool isSmallVersion;
 
-  const ProjectWidget(this._project, this._bottomPadding);
+  const ProjectWidget(this._project, this._bottomPadding, this.isSmallVersion);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,9 @@ class ProjectWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: isSmallVersion
+                  ? CrossAxisAlignment.center
+                  : CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Expanded(
@@ -57,18 +60,21 @@ class ProjectWidget extends StatelessWidget {
                         SizedBox(
                           height: height * .01,
                         ),
-                        Expanded(
-                          child: AutoSizeText(
-                            _project.description,
-                            overflow: TextOverflow.fade,
-                            maxLines: 5,
-                            softWrap: true,
-                          ),
-                        ),
+                        isSmallVersion
+                            ? Container()
+                            : Expanded(
+                                child: SingleChildScrollView(
+                                  child: AutoSizeText(
+                                    _project.description,
+                                    overflow: TextOverflow.fade,
+                                    softWrap: true,
+                                  ),
+                                ),
+                              ),
                         SizedBox(
                           height: height * .01,
                         ),
-                        Text('For more info Tap the Card'),
+                        const Text('For more info Tap the Card'),
                       ],
                     ),
                   ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pro_resume/Page/HomePage.dart';
 import 'package:pro_resume/Tabs/AboutSection.dart';
+import 'package:pro_resume/Tabs/MySkills.dart';
 import 'package:pro_resume/main.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -8,7 +10,9 @@ import '../Tabs/ProjectsSection.dart';
 import '../Tabs/Resume.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final int preSelectedIndex;
+
+  const HomePage({Key? key, required this.preSelectedIndex}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -19,11 +23,15 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> tabWidgets = <Widget>[
     const AboutTab(),
     const ResumeViewer(),
-    const ProjectsTab()
+    const MySkills(),
+    const ProjectsTab(),
   ];
 
   @override
   void initState() {
+    if (widget.preSelectedIndex != -1) {
+      _selectedIndex = widget.preSelectedIndex;
+    }
     super.initState();
   }
 
@@ -32,8 +40,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: getTitle(),
         actions: [
+          IconButton(
+            onPressed: () {
+              CompleteHomePage.of(context)
+                  ?.changeNavigationStyle(0, _selectedIndex);
+            },
+            icon: Image.asset(Assets.switchIcon),
+          ),
           IconButton(
               onPressed: () {
                 Share.share(
@@ -54,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                     width: 20,
                   )
                 : Image.asset(
-                    Assets.moon,
+                    Assets.moonLight,
                     height: 20,
                     width: 20,
                   ),
@@ -69,55 +83,45 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: 'About',
-            icon: Image.asset(
-              Assets.profile,
-              height: 20,
-              width: 20,
-            ),
+            icon: _selectedIndex == 0
+                ? Text('')
+                : Text(
+                    'About',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              Assets.resume,
-              height: 20,
-              width: 20,
-            ),
+            icon: _selectedIndex == 1
+                ? Text('')
+                : Text(
+                    'Resume',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
             label: 'Resume',
           ),
           BottomNavigationBarItem(
-            icon: Image.asset(
-              Assets.project,
-              height: 20,
-              width: 20,
-            ),
+            icon: _selectedIndex == 2
+                ? Text('')
+                : Text(
+                    'My Skills',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+            label: 'My Skills',
+          ),
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 3
+                ? Text('')
+                : Text(
+                    'Projects',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
             label: 'Projects',
-          )
+          ),
         ],
         currentIndex: _selectedIndex,
         onTap: (index) => setState(() => _selectedIndex = index),
         selectedItemColor: Theme.of(context).accentColor,
       ),
     );
-  }
-
-  Widget getTitle() {
-    if (_selectedIndex == 0) {
-      return const Text('');
-    } else if (_selectedIndex == 1) {
-      return const Center(
-        child: Text(
-          'Resume',
-          style: TextStyle(
-              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
-        ),
-      );
-    } else {
-      return const Center(
-        child: Text(
-          'Projects',
-          style: TextStyle(
-              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
-        ),
-      );
-    }
   }
 }

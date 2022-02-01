@@ -2,6 +2,7 @@ import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:mailto/mailto.dart';
+import 'package:pro_resume/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../Constants/StringConstants.dart';
@@ -22,7 +23,9 @@ class AboutTab extends StatelessWidget {
             children: <Widget>[
               CircleAvatar(
                 radius: 100,
-                backgroundImage: Image.asset(Assets.avatar).image,
+                backgroundImage: (MyApp.of(context)?.isDarkMode ?? false)
+                    ? Image.asset(Assets.avatar).image
+                    : Image.asset(Assets.avatarLight).image,
               ),
               const SizedBox(
                 height: 20,
@@ -37,7 +40,7 @@ class AboutTab extends StatelessWidget {
                 height: 20,
               ),
               Text(
-                'Android. Flutter. Gaming. Music.\nLikes Traveling.',
+                'Java. Flutter. Gaming. Music.\nLikes Traveling.',
                 style: Theme.of(context).textTheme.caption,
                 textScaleFactor: 2,
                 textAlign: TextAlign.center,
