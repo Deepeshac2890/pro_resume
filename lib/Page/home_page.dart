@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pro_resume/Tabs/AboutSection.dart';
 import 'package:pro_resume/main.dart';
 
-import '../Resources/assetsConstant.dart';
+import '../Constants/assetsConstant.dart';
 import '../Tabs/ProjectsSection.dart';
 import '../Tabs/Resume.dart';
 

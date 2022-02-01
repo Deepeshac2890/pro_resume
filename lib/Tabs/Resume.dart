@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:pro_resume/Resources/StringConstants.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'dart:html' as html;
+
+import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+
+import '../Constants/StringConstants.dart';
 
 class ResumeViewer extends StatefulWidget {
   const ResumeViewer({Key? key}) : super(key: key);
@@ -10,26 +12,23 @@ class ResumeViewer extends StatefulWidget {
   _ResumeViewerState createState() => _ResumeViewerState();
 }
 
-enum Roles {backendDeveloper, mobileDeveloper, none}
+enum Roles { backendDeveloper, mobileDeveloper, none }
 
 class _ResumeViewerState extends State<ResumeViewer> {
-
   bool isLoading = true;
   late Widget resume;
   String downloadURL = "";
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
   }
 
-  void loadDocument(Roles role) async{
-
+  void loadDocument(Roles role) async {
     if (role == Roles.backendDeveloper) {
       resume = SfPdfViewer.network(backendDeveloperResumeLink);
       downloadURL = backendDeveloperResumeLink;
-    }
-    else {
+    } else {
       resume = SfPdfViewer.network(mobileDeveloperResumeLink);
       downloadURL = mobileDeveloperResumeLink;
     }
@@ -46,24 +45,41 @@ class _ResumeViewerState extends State<ResumeViewer> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            TextButton(onPressed: (){
-              loadDocument(Roles.backendDeveloper);
-            }, child: const Text(backendDeveloperRole),),
-            const SizedBox(width: 20,),
-            TextButton(onPressed: (){
-              loadDocument(Roles.mobileDeveloper);
-            }, child: const Text(mobileDeveloperRole),),
+            TextButton(
+              onPressed: () {
+                loadDocument(Roles.backendDeveloper);
+              },
+              child: const Text(backendDeveloperRole),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            TextButton(
+              onPressed: () {
+                loadDocument(Roles.mobileDeveloper);
+              },
+              child: const Text(mobileDeveloperRole),
+            ),
           ],
         ),
         Expanded(
           child: Card(
-          child: isLoading ? const Center(child: Text(roleNotSelected),) :
-          Scaffold(body: resume,floatingActionButton: FloatingActionButton(onPressed: () {
-            html.window
-                .open(downloadURL, userName);
-          },child: const Icon(Icons.ice_skating),),),
-      ),
-        ),],
+            child: isLoading
+                ? const Center(
+                    child: Text(roleNotSelected),
+                  )
+                : Scaffold(
+                    body: resume,
+                    floatingActionButton: FloatingActionButton(
+                      onPressed: () {
+                        html.window.open(downloadURL, userName);
+                      },
+                      child: const Icon(Icons.ice_skating),
+                    ),
+                  ),
+          ),
+        ),
+      ],
     );
   }
 }

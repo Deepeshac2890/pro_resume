@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_resume/Page/home_page.dart';
-import 'package:pro_resume/Resources/StringConstants.dart';
 
+import 'Constants/StringConstants.dart';
 import 'Themes/themes.dart';
 
 void main() {

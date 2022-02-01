@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../Resources/StringConstants.dart';
-import '../Resources/assetsConstant.dart';
-import '../Resources/profilesConstant.dart';
+import '../Constants/StringConstants.dart';
+import '../Constants/assetsConstant.dart';
+import '../Constants/profilesConstant.dart';
 
 class AboutTab extends StatelessWidget {
   const AboutTab({Key? key}) : super(key: key);

@@ -4,8 +4,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:pro_resume/Resources/StringConstants.dart';
 
+import '../Constants/StringConstants.dart';
 import '../Model/projectModel.dart';
 
 class ProjectWidget extends StatelessWidget {

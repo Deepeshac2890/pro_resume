@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_resume/Model/projectModel.dart';
-import 'package:pro_resume/Resources/assetsConstant.dart';
 
-import '../Resources/Projects.dart';
+import '../Constants/assetsConstant.dart';
+import '../Constants/projectsConstants.dart';
 import '../Widget/ProjectWidget.dart';
 import '../Widget/ResponsiveWidget.dart';
 
