@@ -93,7 +93,7 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                             SizedBox(
                               height: 5,
                             ),
-                            Text("Software Developer",
+                            Text("SDE",
                                 maxLines: 1,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w200,
