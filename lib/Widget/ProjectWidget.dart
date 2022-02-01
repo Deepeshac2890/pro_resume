@@ -47,22 +47,28 @@ class ProjectWidget extends StatelessWidget {
                   flex: 60,
                   child: Container(
                     padding: const EdgeInsets.only(top: 8.0),
-                    child: Wrap(
-                      direction: Axis.horizontal,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
                           _project.name,
                           style: Theme.of(context).textTheme.headline6,
                         ),
                         SizedBox(
-                          height: height * .05,
+                          height: height * .01,
                         ),
-                        AutoSizeText(
-                          _project.description,
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 5,
-                          softWrap: true,
-                        )
+                        Expanded(
+                          child: AutoSizeText(
+                            _project.description,
+                            overflow: TextOverflow.fade,
+                            maxLines: 5,
+                            softWrap: true,
+                          ),
+                        ),
+                        SizedBox(
+                          height: height * .01,
+                        ),
+                        Text('For more info Tap the Card'),
                       ],
                     ),
                   ),

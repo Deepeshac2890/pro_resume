@@ -21,7 +21,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool isDarkMode = true;
+  //Default is Light Theme
+  bool isDarkMode = false;
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override

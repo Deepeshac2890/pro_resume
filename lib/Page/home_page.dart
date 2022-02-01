@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_resume/Tabs/AboutSection.dart';
 import 'package:pro_resume/main.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../Constants/assetsConstant.dart';
 import '../Tabs/ProjectsSection.dart';
@@ -34,6 +35,15 @@ class _HomePageState extends State<HomePage> {
         title: getTitle(),
         actions: [
           IconButton(
+              onPressed: () {
+                Share.share(
+                    'Check out this portfolio : https://deepeshacharya.netlify.app/');
+              },
+              icon: Image.asset(Assets.share)),
+          const SizedBox(
+            width: 5,
+          ),
+          IconButton(
             onPressed: () {
               MyApp.of(context)?.changeTheme();
             },
@@ -55,6 +65,7 @@ class _HomePageState extends State<HomePage> {
         child: tabWidgets.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             label: 'About',
@@ -95,14 +106,16 @@ class _HomePageState extends State<HomePage> {
       return const Center(
         child: Text(
           'Resume',
-          style: TextStyle(fontStyle: FontStyle.italic),
+          style: TextStyle(
+              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
         ),
       );
     } else {
       return const Center(
         child: Text(
           'Projects',
-          style: TextStyle(fontStyle: FontStyle.italic),
+          style: TextStyle(
+              fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
         ),
       );
     }

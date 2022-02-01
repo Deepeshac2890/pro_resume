@@ -49,7 +49,12 @@ class _ResumeViewerState extends State<ResumeViewer> {
               onPressed: () {
                 loadDocument(Roles.backendDeveloper);
               },
-              child: const Text(backendDeveloperRole),
+              child: const Text(
+                backendDeveloperRole,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
             const SizedBox(
               width: 20,
@@ -58,7 +63,12 @@ class _ResumeViewerState extends State<ResumeViewer> {
               onPressed: () {
                 loadDocument(Roles.mobileDeveloper);
               },
-              child: const Text(mobileDeveloperRole),
+              child: const Text(
+                mobileDeveloperRole,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ],
         ),
@@ -66,7 +76,12 @@ class _ResumeViewerState extends State<ResumeViewer> {
           child: Card(
             child: isLoading
                 ? const Center(
-                    child: Text(roleNotSelected),
+                    child: Text(
+                      roleNotSelected,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic),
+                    ),
                   )
                 : Scaffold(
                     body: resume,
