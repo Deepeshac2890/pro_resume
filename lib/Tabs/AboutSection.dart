@@ -1,5 +1,8 @@
-import 'package:flutter/material.dart';
 import 'dart:html' as html;
+
+import 'package:flutter/material.dart';
+import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../Resources/StringConstants.dart';
 import '../Resources/assetsConstant.dart';
@@ -50,8 +53,8 @@ class AboutTab extends StatelessWidget {
                         height: 20,
                         child: Image.asset(Assets.github)),
                     label: const Text('Github'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_GITHUB, userName),
+                    onPressed: () =>
+                        html.window.open(Constants.PROFILE_GITHUB, userName),
                   ),
                   FlatButton.icon(
                     icon: SizedBox(
@@ -59,8 +62,17 @@ class AboutTab extends StatelessWidget {
                         height: 20,
                         child: Image.asset(Assets.twitter)),
                     label: const Text('Twitter'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_TWITTER, userName),
+                    onPressed: () =>
+                        html.window.open(Constants.PROFILE_TWITTER, userName),
+                  ),
+                  FlatButton.icon(
+                    icon: SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: Image.asset(Assets.linkedin)),
+                    label: const Text('Linkedin'),
+                    onPressed: () =>
+                        html.window.open(Constants.PROFILE_LINKEDIN, userName),
                   ),
                 ],
               ),
@@ -74,8 +86,8 @@ class AboutTab extends StatelessWidget {
                         height: 20,
                         child: Image.asset(Assets.instagram)),
                     label: const Text('Instagram'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_INSTAGRAM, userName),
+                    onPressed: () =>
+                        html.window.open(Constants.PROFILE_INSTAGRAM, userName),
                   ),
                   FlatButton.icon(
                     icon: SizedBox(
@@ -83,18 +95,25 @@ class AboutTab extends StatelessWidget {
                         height: 20,
                         child: Image.asset(Assets.facebook)),
                     label: const Text('Facebook'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_FACEBOOK, userName),
+                    onPressed: () =>
+                        html.window.open(Constants.PROFILE_FACEBOOK, userName),
                   ),
                   FlatButton.icon(
-                    icon: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: Image.asset(Assets.linkedin)),
-                    label: const Text('Linkedin'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_LINKEDIN, userName),
-                  )
+                      icon: SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: Image.asset(Assets.mail)),
+                      label: const Text('Contact Me'),
+                      onPressed: () async {
+                        final mailtoLink = Mailto(
+                          to: ['deepeshac280@gmail.com'],
+                          // subject: '',
+                        );
+                        // Convert the Mailto instance into a string.
+                        // Use either Dart's string interpolation
+                        // or the toString() method.
+                        await launch('$mailtoLink');
+                      }),
                 ],
               )
             ],

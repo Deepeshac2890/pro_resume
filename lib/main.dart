@@ -7,11 +7,11 @@ import 'Themes/themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -35,7 +35,9 @@ class _MyAppState extends State<MyApp> {
       future: _initialization,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          print('Has Error');
+          SnackBar snackBar =
+              const SnackBar(content: Text('Sorry some error has occurred'));
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         }
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(

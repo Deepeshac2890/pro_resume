@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 darkTheme(context) {
   return ThemeData(
     fontFamily: 'GoogleSansRegular',
-    primarySwatch: Colors.blue,
     primaryColor: Colors.black,
-    accentColor: Colors.blue,
     disabledColor: Colors.grey,
     cardColor: const Color(0xff1f2124),
     canvasColor: Colors.black,
@@ -16,15 +14,15 @@ darkTheme(context) {
         splashColor: Colors.black),
     appBarTheme: const AppBarTheme(
         elevation: 0.0, titleTextStyle: TextStyle(color: Colors.white)),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+        .copyWith(secondary: Colors.blue),
   );
 }
 
 lightTheme(context) {
   return ThemeData(
     fontFamily: 'GoogleSansRegular',
-    primarySwatch: Colors.blue,
     primaryColor: Colors.white,
-    accentColor: Colors.blue,
     disabledColor: Colors.grey,
     cardColor: Colors.white,
     canvasColor: Colors.white,
@@ -35,5 +33,7 @@ lightTheme(context) {
         splashColor: Colors.white),
     appBarTheme: const AppBarTheme(
         elevation: 0.0, titleTextStyle: TextStyle(color: Colors.black)),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+        .copyWith(secondary: Colors.blue),
   );
 }

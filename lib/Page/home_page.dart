@@ -55,17 +55,29 @@ class _HomePageState extends State<HomePage> {
         child: tabWidgets.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
             label: 'About',
+            icon: Image.asset(
+              Assets.profile,
+              height: 20,
+              width: 20,
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chrome_reader_mode),
+            icon: Image.asset(
+              Assets.resume,
+              height: 20,
+              width: 20,
+            ),
             label: 'Resume',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mobile_screen_share),
+            icon: Image.asset(
+              Assets.project,
+              height: 20,
+              width: 20,
+            ),
             label: 'Projects',
           )
         ],
@@ -80,9 +92,19 @@ class _HomePageState extends State<HomePage> {
     if (_selectedIndex == 0) {
       return const Text('');
     } else if (_selectedIndex == 1) {
-      return const Center(child: Text('Resume'));
+      return const Center(
+        child: Text(
+          'Resume',
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
+      );
     } else {
-      return const Center(child: Text('Projects'));
+      return const Center(
+        child: Text(
+          'Projects',
+          style: TextStyle(fontStyle: FontStyle.italic),
+        ),
+      );
     }
   }
 }

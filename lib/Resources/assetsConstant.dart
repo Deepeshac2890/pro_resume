@@ -6,8 +6,10 @@ class Assets {
   static const github = 'assets/github.png';
   static const instagram = 'assets/instagram.png';
   static const linkedin = 'assets/linkedin.png';
-  static const medium = 'assets/medium.png';
-  static const mediumLight = 'assets/medium_light.png';
+  static const mail = 'assets/mail.png';
+  static const profile = 'assets/profile.png';
+  static const project = 'assets/project.png';
+  static const resume = 'assets/resume.png';
   static const twitter = 'assets/twitter.png';
   static const dropDownArrow = 'assets/dropDownIcon.png';
   static const buyCycle = 'assets/work/BuyCycle.gif';

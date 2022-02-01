@@ -27,7 +27,7 @@ final List<Project> projects = [
       isCompleted: true,
       techStack: ['Flutter', 'Firebase']),
   Project(
-      name: 'Smart Sanitization Project',
+      name: 'Smart Sanitization',
       image: Assets.sanitizationProject,
       description:
           'Developed Toilet finder and feedback application as an input for the inference engine along with sensor data and containerized the inference engine and deployed it on Raspberry-Pi chip.',
