@@ -27,9 +27,11 @@ class AboutTab extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                myName,
-                textScaleFactor: 4,
+              const Center(
+                child: Text(
+                  myName,
+                  textScaleFactor: 4,
+                ),
               ),
               const SizedBox(
                 height: 20,

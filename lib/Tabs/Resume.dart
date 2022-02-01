@@ -71,11 +71,10 @@ class _ResumeViewerState extends State<ResumeViewer> {
                 : Scaffold(
                     body: resume,
                     floatingActionButton: FloatingActionButton(
-                      onPressed: () {
-                        html.window.open(downloadURL, userName);
-                      },
-                      child: const Icon(Icons.ice_skating),
-                    ),
+                        onPressed: () {
+                          html.window.open(downloadURL, userName);
+                        },
+                        child: Icon(Icons.download)),
                   ),
           ),
         ),
