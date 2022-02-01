@@ -35,7 +35,6 @@ flutter:
   assets:
     - assets/
     - assets/work/
-    - assets/Resume/
   fonts:
   - family: GoogleSansRegular
     fonts:
