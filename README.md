@@ -4,6 +4,5 @@ This is a new portfolio website which will server purpose of online resume. Resu
 
 Bugs and Features to come : 
 
-1. Add more projects in the projects tab.
-2. Optimize Mobile View and open the bottom navigation by default for Mobile view while for Desktop set the Side Pan view as default.
-3. Add Contact me option i.e contacting via message.
+1. Add more projects in the projects tab small change is needed just need to add the object for each project UI is automatically rebuilt.
+2. Add Contact me option i.e contacting via message.
