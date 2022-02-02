@@ -16,3 +16,6 @@ const skillOverview =
     "my expertise in mobile development is Flutter and Firebase. \n\n"
     "Currently I have been working as Backend Developer with Oracle India Pvt Ltd. I have been contributing to OUD product of IDM offerings. My expertise in Backend Development is in Java, Docker and Kubernetes.\n\n"
     "Visit my LinkedIn profile for more details.";
+const unsupportedDisplayMessage = 'Sorry Device is not supported 🙁🙁';
+const aboutSectionHobbies = 'Java. Flutter. Gaming. Music.\nLikes Traveling.';
+const moreInfoCard = 'For more info Tap the Card';

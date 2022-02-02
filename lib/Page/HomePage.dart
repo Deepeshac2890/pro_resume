@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:pro_resume/Widget/bottomNavigationStyle.dart';
 import 'package:pro_resume/Widget/sideNavigationStyle.dart';
 
+import '../Constants/StringConstants.dart';
+
 class CompleteHomePage extends StatefulWidget {
   const CompleteHomePage({Key? key}) : super(key: key);
 
@@ -18,6 +20,8 @@ enum NavigationStyle { sideNavigation, bottomNavigation }
 class _CompleteHomePageState extends State<CompleteHomePage> {
   var navigationDrawerStyle = NavigationStyle.sideNavigation;
   int preSelectedTabNumber = -1;
+  var breakpoint = 800;
+  var noDisplayBreakpoint = 370;
 
   void changeNavigationStyle(int styleNumber, int tabSelected) {
     if (styleNumber == 0) {
@@ -34,14 +38,27 @@ class _CompleteHomePageState extends State<CompleteHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (navigationDrawerStyle == NavigationStyle.sideNavigation) {
+    var screenWidth = MediaQuery.of(context).size.width;
+    if (navigationDrawerStyle == NavigationStyle.sideNavigation &&
+        screenWidth > breakpoint) {
       return sideNavigationBar(
         preSelectedTabIndex: preSelectedTabNumber,
       );
     } else {
-      return HomePage(
-        preSelectedIndex: preSelectedTabNumber,
-      );
+      if (screenWidth > noDisplayBreakpoint) {
+        return HomePage(
+          preSelectedIndex: preSelectedTabNumber,
+        );
+      } else {
+        return const Scaffold(
+          body: Center(
+            child: Text(
+              unsupportedDisplayMessage,
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+        );
+      }
     }
   }
 }

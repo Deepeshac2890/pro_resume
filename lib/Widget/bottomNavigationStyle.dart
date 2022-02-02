@@ -20,6 +20,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  var switchBreakPoint = 800;
+
   static List<Widget> tabWidgets = <Widget>[
     const AboutTab(),
     const ResumeViewer(),
@@ -37,17 +39,20 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         actions: [
-          IconButton(
-            onPressed: () {
-              CompleteHomePage.of(context)
-                  ?.changeNavigationStyle(0, _selectedIndex);
-            },
-            icon: Image.asset(Assets.switchIcon),
-          ),
+          screenWidth > switchBreakPoint
+              ? IconButton(
+                  onPressed: () {
+                    CompleteHomePage.of(context)
+                        ?.changeNavigationStyle(0, _selectedIndex);
+                  },
+                  icon: Image.asset(Assets.switchIcon),
+                )
+              : Container(),
           IconButton(
               onPressed: () {
                 Share.share(

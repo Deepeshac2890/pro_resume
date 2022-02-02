@@ -74,7 +74,7 @@ class ProjectWidget extends StatelessWidget {
                         SizedBox(
                           height: height * .01,
                         ),
-                        const Text('For more info Tap the Card'),
+                        const Text(moreInfoCard),
                       ],
                     ),
                   ),
