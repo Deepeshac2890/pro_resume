@@ -20,7 +20,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  var switchBreakPoint = 800;
+  var switchBreakPoint = 1000;
 
   static List<Widget> tabWidgets = <Widget>[
     const AboutTab(),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
               onPressed: () {
                 Share.share(
-                    'Check out this portfolio : https://deepeshacharya.netlify.app/');
+                    'Check out Deepesh\'s portfolio : https://deepeshacharya.netlify.app/');
               },
               icon: Image.asset(Assets.share)),
           const SizedBox(
@@ -89,16 +89,16 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             label: 'About',
             icon: _selectedIndex == 0
-                ? Text('')
-                : Text(
+                ? const Text('')
+                : const Text(
                     'About',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
           ),
           BottomNavigationBarItem(
             icon: _selectedIndex == 1
-                ? Text('')
-                : Text(
+                ? const Text('')
+                : const Text(
                     'Resume',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -106,8 +106,8 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: _selectedIndex == 2
-                ? Text('')
-                : Text(
+                ? const Text('')
+                : const Text(
                     'My Skills',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -115,8 +115,8 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: _selectedIndex == 3
-                ? Text('')
-                : Text(
+                ? const Text('')
+                : const Text(
                     'Projects',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),

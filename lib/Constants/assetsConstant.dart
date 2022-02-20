@@ -17,8 +17,8 @@ class Assets {
   static const resume = 'assets/resume.png';
   static const twitter = 'assets/twitter.png';
   static const dropDownArrow = 'assets/dropDownIcon.png';
-  static const buyCycle = 'assets/work/BuyCycle.gif';
-  static const absoluteFitness = 'assets/work/abs.gif';
-  static const travelBuddy = 'assets/work/TravelBuddy.gif';
+  static const buyCycle = 'assets/work/BuyCycle.png';
+  static const absoluteFitness = 'assets/work/abs.png';
+  static const travelBuddy = 'assets/work/TravelBuddy.png';
   static const sanitizationProject = 'assets/work/sanitizationLogo.png';
 }

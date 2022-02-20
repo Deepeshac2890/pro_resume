@@ -108,14 +108,5 @@ class _MySkillsState extends State<MySkills> {
         )
       ],
     );
-    // return CircularPercentIndicator(
-    //   radius: 50.0,
-    //   lineWidth: 10.0,
-    //   percent: percentage,
-    //   header: Text(stackName),
-    //   // center: Text(stackName),
-    //   backgroundColor: Colors.grey,
-    //   progressColor: Colors.blue,
-    // );
   }
 }
