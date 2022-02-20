@@ -19,7 +19,7 @@ final List<Project> projects = [
       isCompleted: true,
       techStack: ['Flutter', 'Firebase', 'Dart']),
   Project(
-      name: 'Absolute Fitness App',
+      name: 'Absolute Fitness',
       image: Assets.absoluteFitness,
       description:
           'An App which is being developed for Absolute Fitness Gym Pune in which the user can join virtual scheduled classes. It allows the admin to enroll a new members to gym and schedule classes.',
