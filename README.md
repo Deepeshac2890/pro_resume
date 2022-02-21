@@ -2,6 +2,8 @@
 
 This is a new portfolio website which will server purpose of online resume.
 
+Architecture used : BLOC
+
 Features Implemented : 
 1. Links to different media handles provided.
 2. Resume viewer is embedded in which visiter can select resume on basis of the role and download it.
