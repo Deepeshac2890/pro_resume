@@ -5,4 +5,3 @@ This is a new portfolio website which will server purpose of online resume. Resu
 Features to come : 
 
 1. Add more projects in the projects tab small change is needed just need to add the object for each project UI is automatically rebuilt.
-2. Add Contact me option i.e contacting via message.
