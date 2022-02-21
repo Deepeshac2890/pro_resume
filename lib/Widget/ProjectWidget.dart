@@ -113,12 +113,12 @@ class ProjectWidget extends StatelessWidget {
                 ),
               ),
               _project.link != "N.A"
-                  ? GestureDetector(
+                  ? TextButton(
                       child: const Text(
-                        'For Project Link Click Here !!',
+                        'Project Link',
                         style: TextStyle(fontStyle: FontStyle.italic),
                       ),
-                      onTap: onProjectClick,
+                      onPressed: onProjectClick,
                     )
                   : Container(),
             ],
