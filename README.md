@@ -1,6 +1,6 @@
 # pro_resume
 
-This is a new portfolio website which will server purpose of online resume.
+This is a new portfolio website which will server purpose of online resume and skill viewer.
 
 Features Implemented : 
 1. Links to different media handles provided.
