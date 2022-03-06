@@ -20,7 +20,7 @@ enum NavigationStyle { sideNavigation, bottomNavigation }
 class _CompleteHomePageState extends State<CompleteHomePage> {
   var navigationDrawerStyle = NavigationStyle.sideNavigation;
   int preSelectedTabNumber = -1;
-  var breakpoint = 800;
+  var breakpoint = 1000;
   var noDisplayBreakpoint = 370;
 
   void changeNavigationStyle(int styleNumber, int tabSelected) {

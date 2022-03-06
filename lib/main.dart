@@ -42,11 +42,6 @@ class _MyAppState extends State<MyApp> {
         }
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
-            // routes: {
-            //   sideNavigationBar.id: (context) => const sideNavigationBar(),
-            //   HomePage.id: (context) => const HomePage(),
-            // },
-            // initialRoute: sideNavigationBar.id,
             title: myName,
             home: CompleteHomePage(),
             debugShowCheckedModeBanner: false,

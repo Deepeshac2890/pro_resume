@@ -1,4 +1,5 @@
 import 'dart:html' as html;
+import 'dart:ui';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flip_card/flip_card.dart';
@@ -27,7 +28,7 @@ class ProjectWidget extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, _bottomPadding),
         child: InkWell(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: Row(
               crossAxisAlignment: isSmallVersion
                   ? CrossAxisAlignment.center
@@ -66,6 +67,9 @@ class ProjectWidget extends StatelessWidget {
                                 child: SingleChildScrollView(
                                   child: AutoSizeText(
                                     _project.description,
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                    ),
                                     overflow: TextOverflow.fade,
                                     softWrap: true,
                                   ),
@@ -95,24 +99,26 @@ class ProjectWidget extends StatelessWidget {
                 child: Text('Tech Stack Used :'),
               ),
               Expanded(
-                child: GridView.count(
-                  shrinkWrap: true,
-                  crossAxisCount: 3,
-                  children: List.generate(
-                    _project.techStack.length,
-                    (index) {
-                      return Center(child: Text(_project.techStack[index]));
-                    },
+                child: Center(
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    crossAxisCount: 3,
+                    children: List.generate(
+                      _project.techStack.length,
+                      (index) {
+                        return Center(child: Text(_project.techStack[index]));
+                      },
+                    ),
                   ),
                 ),
               ),
               _project.link != "N.A"
-                  ? GestureDetector(
+                  ? TextButton(
                       child: const Text(
-                        'For Project Link Click Here !!',
+                        'Project Link',
                         style: TextStyle(fontStyle: FontStyle.italic),
                       ),
-                      onTap: onProjectClick,
+                      onPressed: onProjectClick,
                     )
                   : Container(),
             ],

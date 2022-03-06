@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:pro_resume/Constants/widgetConstant.dart';
 import 'package:pro_resume/Page/HomePage.dart';
 import 'package:pro_resume/Tabs/AboutSection.dart';
 import 'package:pro_resume/Tabs/MySkills.dart';
@@ -34,6 +35,7 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
     } else {
       selectedTab = const ProjectsTab();
     }
+
     setState(() {
       _selectedIndex = tabNumber;
       selectedTab = selectedTab;
@@ -57,18 +59,18 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
         children: [
           Container(
             decoration: BoxDecoration(
-              border: Border(),
+              border: const Border(),
               color: (MyApp.of(context)?.isDarkMode ?? false)
                   ? Colors.white
                   : Colors.black,
             ),
-            padding: EdgeInsets.all(5),
+            padding: const EdgeInsets.all(5),
             width: MediaQuery.of(context).size.width * 0.1,
             height: MediaQuery.of(context).size.height * 1,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: screenWidth > 1350
                       ? Column(
@@ -90,7 +92,7 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                                           ? Colors.black
                                           : Colors.white),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Text("SDE",
@@ -106,6 +108,9 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                       : Container(),
                 ),
                 Container(
+                  decoration: getNavItemSelectedDecor(
+                      (MyApp.of(context)?.isDarkMode ?? false),
+                      _selectedIndex == 0),
                   height: MediaQuery.of(context).size.height * 0.08,
                   child: MaterialButton(
                     elevation: 5,
@@ -120,6 +125,9 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                   ),
                 ),
                 Container(
+                  decoration: getNavItemSelectedDecor(
+                      (MyApp.of(context)?.isDarkMode ?? false),
+                      _selectedIndex == 1),
                   height: MediaQuery.of(context).size.height * 0.08,
                   child: MaterialButton(
                     elevation: 5,
@@ -134,6 +142,9 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                   ),
                 ),
                 Container(
+                  decoration: getNavItemSelectedDecor(
+                      (MyApp.of(context)?.isDarkMode ?? false),
+                      _selectedIndex == 2),
                   height: MediaQuery.of(context).size.height * 0.08,
                   child: MaterialButton(
                     elevation: 5,
@@ -148,6 +159,9 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                   ),
                 ),
                 Container(
+                  decoration: getNavItemSelectedDecor(
+                      (MyApp.of(context)?.isDarkMode ?? false),
+                      _selectedIndex == 3),
                   height: MediaQuery.of(context).size.height * 0.08,
                   child: MaterialButton(
                     elevation: 5,
