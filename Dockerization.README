@@ -1,0 +1,7 @@
+1. To Build the docker image : 
+  docker build -t deepeshac290/resumeImage .
+2. To run the image : 
+   docker run -d -p 1200:80 --name resume resumeImage
+   
+3. To access the site : 
+   http://localhost:1200

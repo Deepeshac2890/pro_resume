@@ -1,6 +1,6 @@
 # pro_resume
 
-This is a new portfolio website which will server purpose of online resume.
+This is a new portfolio website which will server purpose of online resume and skill viewer.
 
 Features Implemented : 
 1. Links to different media handles provided.
@@ -11,6 +11,7 @@ Features Implemented :
 6. Share Button has been added to share the portfolio.
 7. Ligth/Dark Mode toogle provided along with 2 diffent types of layout so visiter can choose UI according to their comfort.
 8. Page has been made responsive for different screen sizes and UI is optimized according to screen size.
+9. Dockerization of the application is complete. For more info read Dockerizarion.README file
 
 Features to come : 
 
