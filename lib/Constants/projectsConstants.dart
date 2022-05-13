@@ -42,4 +42,12 @@ final List<Project> projects = [
       link: 'https://github.com/Deepeshac2890/pro_resume',
       isCompleted: true,
       techStack: ['Flutter Web', 'Firebase', 'Dart']),
+  Project(
+      name: 'Grocer Guys',
+      image: Assets.grocerGuys,
+      description:
+          'Worked on the The Grocer Guys application which was an online supermarket shopping app. Worked as a freelance developer for the organization was responsible for api integrations and creation of UI elements using flutter. ',
+      link: 'N.A',
+      isCompleted: true,
+      techStack: ['Flutter', 'Firebase', 'Dart']),
 ];

@@ -21,4 +21,5 @@ class Assets {
   static const absoluteFitness = 'assets/work/abs.png';
   static const travelBuddy = 'assets/work/TravelBuddy.png';
   static const sanitizationProject = 'assets/work/sanitizationLogo.png';
+  static const grocerGuys = 'assets/work/grocer_guys.png';
 }

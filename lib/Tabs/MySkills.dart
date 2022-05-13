@@ -65,14 +65,12 @@ class _MySkillsState extends State<MySkills> {
                 children: [
                   buildCircularPercentIndicator(
                       "Flutter", 0.8, Colors.tealAccent),
-                  buildCircularPercentIndicator(
-                      "Native Android", 0.5, Colors.tealAccent),
-                  buildCircularPercentIndicator(
-                      "Docker", 0.7, Colors.tealAccent),
                   buildCircularPercentIndicator("Dart", 0.8, Colors.blueAccent),
                   buildCircularPercentIndicator("Java", 0.8, Colors.blueAccent),
                   buildCircularPercentIndicator(
                       "Git", 0.7, Colors.deepPurpleAccent),
+                  buildCircularPercentIndicator(
+                      "Docker", 0.7, Colors.tealAccent),
                   buildCircularPercentIndicator(
                       "ADE", 0.8, Colors.deepPurpleAccent),
                 ],
@@ -92,9 +90,9 @@ class _MySkillsState extends State<MySkills> {
       children: [
         Text(
           stackName,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         LinearPercentIndicator(
@@ -103,7 +101,7 @@ class _MySkillsState extends State<MySkills> {
             lineHeight: 3.0,
             percent: percentage,
             progressColor: color),
-        SizedBox(
+        const SizedBox(
           height: 15,
         )
       ],
