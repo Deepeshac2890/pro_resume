@@ -65,12 +65,16 @@ class _MySkillsState extends State<MySkills> {
                 children: [
                   buildCircularPercentIndicator(
                       "Flutter", 0.8, Colors.tealAccent),
+                  buildCircularPercentIndicator(
+                      "Android Native", 0.8, Colors.tealAccent),
+                  buildCircularPercentIndicator(
+                      "Docker", 0.6, Colors.tealAccent),
+                  buildCircularPercentIndicator(
+                      "Kotlin", 0.9, Colors.blueAccent),
                   buildCircularPercentIndicator("Dart", 0.8, Colors.blueAccent),
                   buildCircularPercentIndicator("Java", 0.8, Colors.blueAccent),
                   buildCircularPercentIndicator(
-                      "Git", 0.7, Colors.deepPurpleAccent),
-                  buildCircularPercentIndicator(
-                      "Docker", 0.7, Colors.tealAccent),
+                      "Git", 0.8, Colors.deepPurpleAccent),
                   buildCircularPercentIndicator(
                       "ADE", 0.8, Colors.deepPurpleAccent),
                 ],
