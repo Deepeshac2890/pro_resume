@@ -41,7 +41,7 @@ class _CompleteHomePageState extends State<CompleteHomePage> {
     var screenWidth = MediaQuery.of(context).size.width;
     if (navigationDrawerStyle == NavigationStyle.sideNavigation &&
         screenWidth > breakpoint) {
-      return sideNavigationBar(
+      return SideNavigationBar(
         preSelectedTabIndex: preSelectedTabNumber,
       );
     } else {

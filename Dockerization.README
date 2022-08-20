@@ -1,5 +1,5 @@
 1. To Build the docker image : 
-  docker build -t deepeshac290/resumeImage .
+  docker build -t deepeshac290/resumeImag6 .
 2. To run the image : 
    docker run -d -p 1200:80 --name resume resumeImage
    

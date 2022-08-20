@@ -6,6 +6,7 @@ class Assets {
   static const avatarLight = 'assets/avatarLight.jpg';
   static const share = 'assets/share.png';
   static const dLetter = 'assets/D.png';
+  static const dLetterWhite = 'assets/D_white.jpg';
   static const facebook = 'assets/facebook.png';
   static const github = 'assets/github.png';
   static const instagram = 'assets/instagram.png';

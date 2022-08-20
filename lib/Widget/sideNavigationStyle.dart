@@ -5,23 +5,23 @@ import 'package:pro_resume/Page/HomePage.dart';
 import 'package:pro_resume/Tabs/AboutSection.dart';
 import 'package:pro_resume/Tabs/MySkills.dart';
 import 'package:pro_resume/Tabs/Resume.dart';
+import 'package:pro_resume/main.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../Constants/assetsConstant.dart';
 import '../Tabs/ProjectsSection.dart';
-import '../main.dart';
 
-class sideNavigationBar extends StatefulWidget {
+class SideNavigationBar extends StatefulWidget {
   final int preSelectedTabIndex;
 
-  const sideNavigationBar({Key? key, required this.preSelectedTabIndex})
+  const SideNavigationBar({Key? key, required this.preSelectedTabIndex})
       : super(key: key);
 
   @override
-  _sideNavigationBarState createState() => _sideNavigationBarState();
+  _SideNavigationBarState createState() => _SideNavigationBarState();
 }
 
-class _sideNavigationBarState extends State<sideNavigationBar> {
+class _SideNavigationBarState extends State<SideNavigationBar> {
   Widget selectedTab = const AboutTab();
   var _selectedIndex = 0;
 
@@ -78,7 +78,9 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Image.asset(
-                              Assets.dLetter,
+                              (MyApp.of(context)?.isDarkMode ?? false)
+                                  ? Assets.dLetter
+                                  : Assets.dLetterWhite,
                               height: MediaQuery.of(context).size.height * 0.3,
                             ),
                             AutoSizeText(
@@ -95,7 +97,7 @@ class _sideNavigationBarState extends State<sideNavigationBar> {
                             const SizedBox(
                               height: 5,
                             ),
-                            Text("SDE",
+                            Text("Software Engineer",
                                 maxLines: 1,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w200,
