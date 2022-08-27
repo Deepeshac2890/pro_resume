@@ -3,7 +3,7 @@ class Project {
   String name;
   String description;
   String link;
-  List<String> techStack;
+  List<dynamic> techStack;
   bool isCompleted;
   Project(
       {required this.image,

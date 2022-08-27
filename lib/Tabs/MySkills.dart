@@ -1,8 +1,11 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:pro_resume/Constants/assetsConstant.dart';
+import 'package:pro_resume/Model/SkillPageData.dart';
+import 'package:pro_resume/Model/SkillsModel.dart';
 
-import '../Constants/StringConstants.dart';
+import '../Service/FirebaseService.dart';
 
 class MySkills extends StatefulWidget {
   const MySkills({Key? key}) : super(key: key);
@@ -18,75 +21,98 @@ class _MySkillsState extends State<MySkills> {
     Colors.yellow,
     Colors.red,
   ];
-
+  List<SkillsModel> skills = [];
+  List<Widget> skillsWidget = [];
+  late SkillPageData data;
+  bool isLoading = true;
   static const colorizeTextStyle = TextStyle(
     fontSize: 50.0,
   );
 
   @override
+  void initState() {
+    getSkillsData();
+    super.initState();
+  }
+
+  void getSkillsData() async {
+    data = await FirebaseService().getSkillsTabData();
+    skills = data.skills;
+    skillsWidget = buildSkills();
+    isLoading = false;
+    setState(() {});
+  }
+
+  List<Widget> buildSkills() {
+    List<Widget> skillList = [];
+    if (skills.isNotEmpty) {
+      for (var skill in skills) {
+        MaterialAccentColor color;
+        if (skill.skillType == SkillType.LANGUAGE) {
+          color = Colors.tealAccent;
+        } else if (skill.skillType == SkillType.FRAMEWORK) {
+          color = Colors.blueAccent;
+        } else {
+          color = Colors.deepPurpleAccent;
+        }
+        skillList.add(
+            buildLinearPercentIndicator(skill.skillName, skill.percent, color));
+      }
+    }
+    return skillList;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
-      child: Row(
-        children: [
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
+    return isLoading
+        ? Center(child: Image.asset(Assets.loadingGif))
+        : Container(
+            padding: const EdgeInsets.fromLTRB(10, 20, 10, 10),
+            child: Row(
               children: [
-                AnimatedTextKit(animatedTexts: [
-                  ColorizeAnimatedText(
-                    'Skills \n& Experiences',
-                    textStyle: colorizeTextStyle,
-                    colors: colorizeColors,
+                Expanded(
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    children: [
+                      AnimatedTextKit(animatedTexts: [
+                        ColorizeAnimatedText(
+                          'Skills \n& Experiences',
+                          textStyle: colorizeTextStyle,
+                          colors: colorizeColors,
+                        ),
+                      ]),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        data.summary,
+                        textScaleFactor: 1.4,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      )
+                    ],
                   ),
-                ]),
-                const SizedBox(
-                  height: 10,
                 ),
-                const Text(
-                  skillOverview,
-                  textScaleFactor: 1.4,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontStyle: FontStyle.italic,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.1,
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: skillsWidget,
+                    ),
                   ),
                 )
               ],
             ),
-          ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width * 0.1,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  buildCircularPercentIndicator(
-                      "Flutter", 0.8, Colors.tealAccent),
-                  buildCircularPercentIndicator(
-                      "Android Native", 0.8, Colors.tealAccent),
-                  buildCircularPercentIndicator(
-                      "Docker", 0.6, Colors.tealAccent),
-                  buildCircularPercentIndicator(
-                      "Kotlin", 0.9, Colors.blueAccent),
-                  buildCircularPercentIndicator("Dart", 0.8, Colors.blueAccent),
-                  buildCircularPercentIndicator("Java", 0.8, Colors.blueAccent),
-                  buildCircularPercentIndicator(
-                      "Git", 0.8, Colors.deepPurpleAccent),
-                  buildCircularPercentIndicator(
-                      "ADE", 0.8, Colors.deepPurpleAccent),
-                ],
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+          );
   }
 
-  Widget buildCircularPercentIndicator(
+  Widget buildLinearPercentIndicator(
       String stackName, double percentage, Color color) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,

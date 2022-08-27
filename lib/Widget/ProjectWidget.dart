@@ -37,7 +37,7 @@ class ProjectWidget extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   flex: 40,
-                  child: Image.asset(
+                  child: Image.network(
                     _project.image,
                     width: width * .25,
                     height: width * .25,

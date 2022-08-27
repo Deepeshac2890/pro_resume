@@ -3,10 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:pro_resume/Page/HomePage.dart';
 
 import 'Constants/StringConstants.dart';
+import 'FirebaseOptionsProvider.dart';
 import 'Themes/themes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: apiKey,
+      appId: appID,
+      messagingSenderId: msID,
+      projectId: projectID,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -35,20 +44,15 @@ class _MyAppState extends State<MyApp> {
     return FutureBuilder(
       future: _initialization,
       builder: (context, snapshot) {
-        if (snapshot.hasError) {
-          SnackBar snackBar =
-              const SnackBar(content: Text('Sorry some error has occurred'));
-          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-        }
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             title: myName,
-            home: CompleteHomePage(),
+            home: const CompleteHomePage(),
             debugShowCheckedModeBanner: false,
             theme: isDarkMode ? darkTheme(context) : lightTheme(context),
           );
         }
-        return const CircularProgressIndicator();
+        return Container();
       },
     );
   }
