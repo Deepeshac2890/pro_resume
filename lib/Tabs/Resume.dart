@@ -89,7 +89,7 @@ class _ResumeViewerState extends State<ResumeViewer> {
                         onPressed: () {
                           html.window.open(downloadURL, userName);
                         },
-                        child: Icon(Icons.download)),
+                        child: const Icon(Icons.download)),
                   ),
           ),
         ),
