@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:pro_resume/Constants/CachedData.dart';
 import 'package:pro_resume/Constants/assetsConstant.dart';
 import 'package:pro_resume/Model/SkillPageData.dart';
 import 'package:pro_resume/Model/SkillsModel.dart';
@@ -36,7 +37,11 @@ class _MySkillsState extends State<MySkills> {
   }
 
   void getSkillsData() async {
-    data = await FirebaseService().getSkillsTabData();
+    if (skillsData == null) {
+      data = await FirebaseService().getSkillsTabData();
+    } else {
+      data = skillsData!;
+    }
     skills = data.skills;
     skillsWidget = buildSkills();
     isLoading = false;

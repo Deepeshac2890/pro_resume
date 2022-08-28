@@ -3,13 +3,14 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:mailto/mailto.dart';
+import 'package:pro_resume/Model/AboutModel.dart';
 import 'package:pro_resume/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../Constants/CachedData.dart';
 import '../Constants/StringConstants.dart';
 import '../Constants/assetsConstant.dart';
 import '../Constants/profilesConstant.dart';
-import '../Model/AboutModel.dart';
 import '../Service/FirebaseService.dart';
 
 class AboutTab extends StatefulWidget {
@@ -30,7 +31,12 @@ class _AboutTabState extends State<AboutTab> {
   }
 
   void getData() async {
-    aboutSectionModel = await FirebaseService().getAboutDetails();
+    if (aboutDetails == null) {
+      aboutSectionModel = await FirebaseService().getAboutDetails();
+      aboutDetails = aboutSectionModel;
+    } else {
+      aboutSectionModel = aboutDetails as AboutModel;
+    }
     isLoading = false;
     setState(() {});
   }

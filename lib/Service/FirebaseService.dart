@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:pro_resume/Model/AboutModel.dart';
 import 'package:pro_resume/Model/SkillPageData.dart';
 import 'package:pro_resume/Model/SkillsModel.dart';
 import 'package:pro_resume/Model/projectModel.dart';
-
-import '../Model/AboutModel.dart';
 
 class FirebaseService {
   var fireStore = FirebaseFirestore.instance.collection("Details");

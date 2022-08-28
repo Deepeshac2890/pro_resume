@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:pro_resume/Constants/CachedData.dart';
 import 'package:pro_resume/Model/projectModel.dart';
 import 'package:pro_resume/Widget/ProjectWidget.dart';
 
@@ -30,7 +31,11 @@ class _ProjectsTabState extends State<ProjectsTab> {
   }
 
   void getProjectsData() async {
-    projects = await FirebaseService().getProjects();
+    if (cachedProjects == null) {
+      projects = await FirebaseService().getProjects();
+    } else {
+      projects = cachedProjects!;
+    }
     filteredProject = projects.cast<Project>();
     isLoading = false;
     setState(() {});
