@@ -3,7 +3,7 @@ class Assets {
   static const moonLight = 'assets/moonLight.png';
   static const sun = 'assets/sun.png';
   static const avatar = 'assets/avatar.jpg';
-  static const loadingGif = 'assets/loadingBalls.gif';
+  static const loadingGif = 'assets/loadingDots.gif';
   static const avatarLight = 'assets/avatarLight.jpg';
   static const share = 'assets/share.png';
   static const dLetter = 'assets/D_black.jpg';
