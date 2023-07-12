@@ -1,10 +1,8 @@
 import 'dart:html' as html;
-import 'dart:ui';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 import '../Constants/StringConstants.dart';
 import '../Model/projectModel.dart';

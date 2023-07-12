@@ -106,10 +106,12 @@ class _MySkillsState extends State<MySkills> {
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 120, 0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: skillsWidget,
-                    ),
+                    child: ListView(children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: skillsWidget,
+                      ),
+                    ]),
                   ),
                 )
               ],

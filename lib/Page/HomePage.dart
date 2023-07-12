@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pro_resume/Widget/bottomNavigationStyle.dart';
 import 'package:pro_resume/Widget/sideNavigationStyle.dart';

@@ -85,7 +85,7 @@ class _AboutTabState extends State<AboutTab> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    FlatButton.icon(
+                    TextButton.icon(
                       icon: SizedBox(
                           width: 20,
                           height: 20,
@@ -94,7 +94,7 @@ class _AboutTabState extends State<AboutTab> {
                       onPressed: () =>
                           html.window.open(Constants.PROFILE_GITHUB, userName),
                     ),
-                    FlatButton.icon(
+                    TextButton.icon(
                       icon: SizedBox(
                           width: 20,
                           height: 20,
@@ -103,7 +103,7 @@ class _AboutTabState extends State<AboutTab> {
                       onPressed: () =>
                           html.window.open(Constants.PROFILE_TWITTER, userName),
                     ),
-                    FlatButton.icon(
+                    TextButton.icon(
                       icon: SizedBox(
                           width: 20,
                           height: 20,
@@ -118,7 +118,7 @@ class _AboutTabState extends State<AboutTab> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    FlatButton.icon(
+                    TextButton.icon(
                       icon: SizedBox(
                           width: 20,
                           height: 20,
@@ -127,7 +127,7 @@ class _AboutTabState extends State<AboutTab> {
                       onPressed: () => html.window
                           .open(Constants.PROFILE_INSTAGRAM, userName),
                     ),
-                    FlatButton.icon(
+                    TextButton.icon(
                       icon: SizedBox(
                           width: 20,
                           height: 20,
@@ -136,7 +136,7 @@ class _AboutTabState extends State<AboutTab> {
                       onPressed: () => html.window
                           .open(Constants.PROFILE_FACEBOOK, userName),
                     ),
-                    FlatButton.icon(
+                    TextButton.icon(
                         icon: SizedBox(
                             width: 20,
                             height: 20,

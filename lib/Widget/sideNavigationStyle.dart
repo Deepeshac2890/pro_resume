@@ -8,6 +8,7 @@ import 'package:pro_resume/Tabs/Resume.dart';
 import 'package:pro_resume/main.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../Constants/StringConstants.dart';
 import '../Constants/assetsConstant.dart';
 import '../Tabs/ProjectsSection.dart';
 
@@ -184,7 +185,7 @@ class _SideNavigationBarState extends State<SideNavigationBar> {
                       child: IconButton(
                           onPressed: () {
                             Share.share(
-                                'Check out this portfolio : https://deepeshacharya.netlify.app/');
+                                shareText);
                           },
                           icon: Image.asset(Assets.share)),
                     ),

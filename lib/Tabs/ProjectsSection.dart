@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_resume/Constants/CachedData.dart';
 import 'package:pro_resume/Model/projectModel.dart';
 import 'package:pro_resume/Widget/ProjectWidget.dart';
 
+import '../Constants/StringConstants.dart';
 import '../Constants/assetsConstant.dart';
 import '../Service/FirebaseService.dart';
 
@@ -65,23 +65,26 @@ class _ProjectsTabState extends State<ProjectsTab> {
                                   .invokeMethod('TextInput.hide');
                             },
                             child: TextField(
-                              textAlign: TextAlign.center,
+                              cursorOpacityAnimates: true,
+                              textAlign: TextAlign.start,
                               keyboardType: TextInputType.name,
+                              onTap: () {},
                               onChanged: (value) {
                                 techStackSearched = value;
                                 filterProjects();
                               },
                               decoration: const InputDecoration(
-                                hintText:
-                                    'Search Project with Tech Stack (For mutiple stacks use , as seperator)',
+                                labelText: hintTextProjectSearchBar,
                                 hintStyle: TextStyle(
                                   color: Colors.grey,
                                 ),
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 5.0, horizontal: 5.0),
-                                border: OutlineInputBorder(
+                                enabledBorder: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(5.0)),
+                                  borderSide: BorderSide(
+                                      color: Colors.grey, width: 0.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(

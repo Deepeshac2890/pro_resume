@@ -1,3 +1,3 @@
 When not able to get the data from firebase in flutter web the cors enabled server is needed so to do that in the firebase we can refer https://stackoverflow.com/questions/37760695/firebase-storage-and-access-control-allow-origin/37765371
 
-Faced issue when deployed the application even with responsive code changes the code was not working well for mobile so in that case solution is to run flutter build with web-redenderer param. flutter build web --web-renderer canvaskit . After this we will copy the build/web into the netlify. This makes it work.
+Faced issue when deployed the application even with responsive code changes the code was not working well for mobile so in that case solution is to run flutter build with web-renderer param. flutter build web --web-renderer canvaskit --no-tree-shake-icons. After this we will copy the build/web into the netlify. This makes it work.

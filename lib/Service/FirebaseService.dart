@@ -16,7 +16,7 @@ class FirebaseService {
     var docData = await fireStore.doc("Projects").collection("Projects").get();
     var docs = docData.docs;
     List<Project> projects = [];
-    docs.forEach((element) {
+    for (var element in docs) {
       var data = element.data();
       List group = data["Stack"] as List<dynamic>;
       Project project = Project(
@@ -27,7 +27,7 @@ class FirebaseService {
           techStack: group,
           isCompleted: data["Completed"] as bool);
       projects.add(project);
-    });
+    }
     return projects;
   }
 

@@ -9,6 +9,8 @@ import 'Themes/themes.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp(
+    // These are coming from a const file that is not on github.
+    // These information can be obtained from firebase.
     options: const FirebaseOptions(
       apiKey: apiKey,
       appId: appID,
