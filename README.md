@@ -18,3 +18,4 @@ To Do :
 1. Remove some minor hardcoding to make it complete BE driven
 2. Add Experiences tab
 3. Need to add comments and shimmer loading states.
+4. Add chatbot support using chatGPT sdks
